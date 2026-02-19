@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-briefcase"></i> Job Search Portal</h1>
+            <nav>
+                <button class="nav-btn active" data-section="home">Home</button>
+                <button class="nav-btn" data-section="saved">Saved Jobs <span id="savedCount">0</span></button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="homeSection" class="section active">
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search by job title, skills, or company...">
+                </div>
+                <div class="filters">
+                    <select id="locationFilter">
+                        <option value="">All Locations</option>
+                        <option value="New York">New York</option>
+                        <option value="San Francisco">San Francisco</option>
+                        <option value="Remote">Remote</option>
+                        <option value="London">London</option>
+                        <option value="Berlin">Berlin</option>
+                        <option value="Toronto">Toronto</option>
+                    </select>
+                    <select id="typeFilter">
+                        <option value="">All Types</option>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Internship">Internship</option>
+                        <option value="Remote">Remote</option>
+                    </select>
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Design">Design</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Healthcare">Healthcare</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="jobList" class="job-list"></div>
+        </section>
+
+        <section id="savedSection" class="section">
+            <h2><i class="fas fa-bookmark"></i> Saved Jobs</h2>
+            <div id="savedJobList" class="job-list"></div>
+        </section>
+    </main>
+
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
